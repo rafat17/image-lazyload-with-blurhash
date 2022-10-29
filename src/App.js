@@ -7,7 +7,11 @@ const App = () => {
   return (
     <div className="images-list">
       {ImagesList.map((image) => (
-        <LazyLoadImageWithBlurhash key={image.id} url={image.imageUrl} />
+        <LazyLoadImageWithBlurhash
+          key={image.id}
+          hash={image.imageHash}
+          url={image.imageUrl}
+        />
       ))}
     </div>
   );

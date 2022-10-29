@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BlurhashCanvas } from 'react-blurhash';
 
-const LazyLoadImageWithBlurhash = ({ url }) => {
+const LazyLoadImageWithBlurhash = ({ hash, url }) => {
   const [imageHasLoaded, setImageHasLoaded] = useState(false);
 
   const handleImageLoad = () => {
-    console.log('I have loaded');
     setImageHasLoaded(true);
   };
 
@@ -13,9 +12,7 @@ const LazyLoadImageWithBlurhash = ({ url }) => {
     <div className="images-list__container">
       {!imageHasLoaded && (
         <BlurhashCanvas
-          hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
-          width={100}
-          height={100}
+          hash={hash}
           style={{
             position: 'absolute',
             top: 0,
