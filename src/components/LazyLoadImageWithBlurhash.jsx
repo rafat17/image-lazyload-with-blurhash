@@ -19,11 +19,17 @@ const LazyLoadImageWithBlurhash = ({ hash, url }) => {
             left: 0,
             width: '100%',
             height: '100%',
+            padding: '8px',
           }}
           punch={1}
         />
       )}
-      <img onLoad={handleImageLoad} className="images-list__image" src={url} />
+      <img
+        onLoad={handleImageLoad}
+        className="images-list__image"
+        src={url}
+        loading="lazy"
+      />
     </div>
   );
 };
