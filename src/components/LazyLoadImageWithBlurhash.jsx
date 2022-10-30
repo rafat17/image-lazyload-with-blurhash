@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { BlurhashCanvas } from 'react-blurhash';
+import classnames from 'classnames';
 
 const LazyLoadImageWithBlurhash = ({ hash, url }) => {
   const [imageHasLoaded, setImageHasLoaded] = useState(false);
 
   const handleImageLoad = () => {
+    console.log('I have loaded', url);
     setImageHasLoaded(true);
   };
 
   return (
     <div className="images-list__container">
-      {!imageHasLoaded && (
-        <BlurhashCanvas
-          hash={hash}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            padding: '8px',
-          }}
-          punch={1}
-        />
-      )}
+      <BlurhashCanvas
+        hash={hash}
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        punch={1}
+      />
       <img
         onLoad={handleImageLoad}
-        className="images-list__image"
+        className={classnames('images-list__image', {
+          'images-list__image--hidden': !imageHasLoaded,
+        })}
         src={url}
         loading="lazy"
       />
