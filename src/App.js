@@ -1,7 +1,8 @@
 import React from 'react';
-import './style.css';
 import LazyLoadImageWithBlurhash from './components/LazyLoadImageWithBlurhash';
 import ImagesList from './imagesList';
+
+import './style.scss';
 
 const App = () => {
   return (
