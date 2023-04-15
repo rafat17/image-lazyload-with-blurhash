@@ -5,18 +5,25 @@ p {
 }
 
 .images-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   &__container {
     position: relative;
-    height: 45vh;
+    width: 25%;
+    height: 500px;
+    margin: 10px;
   }
 
   &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    transition: opacity 0.2s 0.2s ease-out;
+    border-radius: 10px;
 
     &--hidden {
       opacity: 0;
