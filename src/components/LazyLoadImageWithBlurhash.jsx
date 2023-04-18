@@ -39,6 +39,7 @@ const LazyLoadImageWithBlurhash = ({ hash, url }) => {
           'images-list__image--hidden': !imageHasLoaded,
         })}
         src={url}
+        loading="lazy"
       />
     </div>
   );
