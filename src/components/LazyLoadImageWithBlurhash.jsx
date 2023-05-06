@@ -21,9 +21,9 @@ const LazyLoadImageWithBlurhash = ({ hash, url }) => {
       }, 2000);
     }
 
-    if (removeCanvasTimeout) {
+    () => {
       clearTimeout(removeCanvasTimeout);
-    }
+    };
   }, [imageHasLoaded]);
 
   return (
